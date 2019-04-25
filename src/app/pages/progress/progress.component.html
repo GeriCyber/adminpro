@@ -1,3 +1,50 @@
-<p>
-  progress works!
-</p>
+
+<!-- ============================================================== -->
+  <!-- Start Page Content -->
+  <!-- ============================================================== -->
+  <div class="row">
+      <div class="col-12">
+          <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Barra de progreso</h4>
+                <div class="progress m-t-30">
+                  <div class="progress-bar bg-info active progress-bar-striped"
+                      style="height:8px;"
+                      role="progressbar"
+                      [style.width]="progress2 + '%'"
+                      [attr.ariaValueNow]="progress2">
+                    </div>
+                </div>
+
+                <div class="progress m-t-30">
+                  <div class="progress-bar bg-danger active progress-bar-striped"
+                      style="height:8px;"
+                      role="progressbar"
+                      [style.width]="progress1 + '%'"
+                      [attr.ariaValueNow]="progress1">
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-6">
+          <div class="card">
+              <div class="card-body">
+                <app-incrementador (valueOnChange)="progress2 = $event" nombre="Barra Azul" [progress]="progress2"></app-incrementador>
+              </div>
+          </div>
+      </div>
+      <div class="col-6">
+          <div class="card">
+              <div class="card-body">
+                  <app-incrementador (valueOnChange)="progress1 = $event" nombre="Barra Roja" [progress]="progress1"></app-incrementador>
+              </div>
+          </div>
+      </div>
+</div>
+  <!-- ============================================================== -->
+  <!-- End PAge Content -->
+  <!-- ============================================================== -->
